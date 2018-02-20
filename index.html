@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Pomodoro clock</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+</head>
+	<body>
+		<div class="container center-align">
+			<div class="row">
+				<div class="col s6 ">
+					<div class="row">
+						<div class="col s12 tooltipped" data-position="bottom" data-delay="10" data-tooltip="Max 60 minutes">
+							<h4>Break length</h4>
+						</div>
+					</div>
+					<div class="row valign-wrapper">
+						<div class="col s4 m4">
+							<a class="btn-floating btn waves-effect waves-light red" onclick="decrementTime('break')">-</a>
+						</div>
+						<div class="col s4 m4">
+							<h3 id="breakLength">5</h3>
+						</div>
+						<div class="col s4 m4">
+							<a class="btn-floating btn waves-effect waves-light red" onclick="incrementTime('break')">+</a>
+						</div>
+					</div>
+				</div>
+				<div class="col s6">
+					<div class="row">
+						<div class="col s12 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Max 60 minutes">
+							<h4>Session length</h4>
+						</div>
+					</div>
+					<div class="row valign-wrapper">
+						<div class="col s4 m4">
+							<a class="btn-floating btn waves-effect waves-light red" onclick="decrementTime('session')">-</a>
+						</div>
+						<div class="col s4 m4">
+							<h3 id="sessionLength">5</h3>
+						</div>
+						<div class="col s4 m4">
+							<a class="btn-floating btn waves-effect waves-light red" onclick="incrementTime('session')">+</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s6">
+					<button id="startBtn" class="waves-effect waves-light btn" onclick="startTimer()">Start</button> 
+					<button id="pauseBtn" class="waves-effect waves-light btn red hide" onclick="pauseTimer()">Pause</button>
+				</div>
+				<div class="col s6">
+					<button id="resetBtn" class="waves-effect waves-light btn" onclick="resetTime()">Reset</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s12">
+					<p id="status" class="flow-text">Paused</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s6">
+					<div class="card small">
+						<div class="card-content">
+							<h1 id="minuteDisplay">5</h1>
+						</div>
+						<div class="card-action">
+							<p class="flow-text">Minute</p>
+						</div>
+					</div>
+				</div>
+				<div class="col s6">
+					<div class="card small">
+						<div class="card-content">
+							<h1 id="secondDisplay">00</h1>
+						</div>
+						<div class="card-action">
+							<p class="flow-text">Second</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
